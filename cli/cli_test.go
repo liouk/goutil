@@ -2,6 +2,8 @@ package cli
 
 import (
 	"bytes"
+	"fmt"
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -46,4 +48,13 @@ func TestPrompt(t *testing.T) {
 	selected, err = Prompt(&stdin, "", 1)
 	assert.Equal(t, "", selected)
 	assert.NotNil(t, err)
+}
+
+func ExamplePrompt() {
+	selected, err := cli.Prompt(os.Stdin, "choose:", 0, "yes", "no")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(selected)
 }
