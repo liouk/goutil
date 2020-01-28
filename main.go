@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 	"goutil/cli"
+	"os"
 )
 
 func main() {
-	selected, err := cli.Prompt("Fancy?", 1, "yes", "no", "maybe")
+	selected, err := cli.Prompt(os.Stdin, "choose:", 0, "yes", "no")
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(selected)
+	fmt.Println("user selected:", selected)
 }

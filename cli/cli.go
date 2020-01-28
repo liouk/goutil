@@ -1,4 +1,4 @@
-// Package cli provides various command-line interface utilities
+// Package goutil/cli provides various command-line interface utilities
 package cli
 
 import (
@@ -6,14 +6,15 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"os"
+	"io"
 	"strings"
 )
 
 // Prompt displays a CLI prompt to the user. It prints the specified message,
 // and gives a list of options, with a preselected default (-1 to not set any default).
-// It returns the selected option as a string.
-func Prompt(message string, defaultIdx int, options ...string) (string, error) {
+// It reads the user input from the specified input stream (e.g. os.Stdin) and
+// returns the selected option as a string.
+func Prompt(stream io.Reader, message string, defaultIdx int, options ...string) (string, error) {
 	if len(options) < 1 {
 		return "", errors.New("no options specified")
 	}
@@ -39,7 +40,7 @@ func Prompt(message string, defaultIdx int, options ...string) (string, error) {
 	}
 	buf.WriteString(") ")
 
-	reader := bufio.NewReader(os.Stdin)
+	reader := bufio.NewReader(stream)
 	for {
 		fmt.Print(buf.String())
 		selected, _ := reader.ReadString('\n')
