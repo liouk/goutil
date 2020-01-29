@@ -1,5 +1,5 @@
 # goutil
-![Go](https://github.com/liouk/goutil/workflows/Go/badge.svg) [![GoDoc](https://godoc.org/github.com/liouk/goutil?status.svg)](https://godoc.org/github.com/liouk/goutil)
+![Go](https://github.com/liouk/goutil/workflows/Go/badge.svg) [![Coverage Status](https://coveralls.io/repos/github/liouk/goutil/badge.svg?branch=master)](https://coveralls.io/github/liouk/goutil?branch=master) [![GoDoc](https://godoc.org/github.com/liouk/goutil?status.svg)](https://godoc.org/github.com/liouk/goutil)
 
 Various useful tricks and utilities for golang.
 
