@@ -1,4 +1,4 @@
-module goutil
+module github.com/liouk/goutil
 
 go 1.12
 

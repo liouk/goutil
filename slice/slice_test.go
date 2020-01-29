@@ -1,6 +1,7 @@
 package slice
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -21,6 +22,12 @@ func TestContains(t *testing.T) {
 	var nilsli []string
 	assert.False(t, Contains(nilsli, ""))
 	assert.False(t, Contains(nilsli, "0"))
+}
+
+func ExampleContains() {
+	sli := []string{"one", "two", "three"}
+	fmt.Println(Contains(sli, "four"), Contains(sli, "three"))
+	// Output: false true
 }
 
 func TestFindAndRemove(t *testing.T) {

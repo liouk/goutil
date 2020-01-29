@@ -51,7 +51,7 @@ func TestPrompt(t *testing.T) {
 }
 
 func ExamplePrompt() {
-	selected, err := cli.Prompt(os.Stdin, "choose:", 0, "yes", "no")
+	selected, err := Prompt(os.Stdin, "choose:", 0, "yes", "no")
 	if err != nil {
 		panic(err)
 	}
