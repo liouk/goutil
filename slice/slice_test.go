@@ -72,6 +72,13 @@ func TestFindAndRemove(t *testing.T) {
 	assert.Equal(t, len(sli), 0)
 }
 
+func ExampleFindAndRemove() {
+	sli, removed := FindAndRemove([]string{"one", "two", "three"}, "two")
+
+	fmt.Println("removed?", removed, sli)
+	// Output: removed? true [one three]
+}
+
 func TestRemoveAtIndex(t *testing.T) {
 	sli := RemoveAtIndex([]string{"0", "1", "2"}, 0)
 	assert.Equal(t, len(sli), 2)
@@ -99,4 +106,11 @@ func TestRemoveAtIndex(t *testing.T) {
 
 	sli = RemoveAtIndex(nil, 0)
 	assert.Nil(t, sli)
+}
+
+func ExampleRemoveAtIndex() {
+	sli := RemoveAtIndex([]string{"one", "two", "three"}, 1)
+
+	fmt.Println(sli)
+	// Output: [one three]
 }
