@@ -1,4 +1,4 @@
-// Package goutil/slice provides slice related operations and utilities
+// Package slice provides slice related operations and utilities
 package slice
 
 // Contains checks if a specific element el exists in a string slice sli.

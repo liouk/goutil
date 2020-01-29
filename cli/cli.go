@@ -1,4 +1,4 @@
-// Package goutil/cli provides various command-line interface utilities
+// Package cli provides various command-line interface utilities
 package cli
 
 import (
